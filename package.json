@@ -6,9 +6,7 @@
 	"author": "Andres Zepeda",
 	"scripts": {
 		"dev": "vite",
-		"build": "vite build",
-		"lint": "eslint .",
-		"preview": "vite preview"
+		"build": "vite build"
 	},
 	"dependencies": {
 		"react": "^19.0.0",
