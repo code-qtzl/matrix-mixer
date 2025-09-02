@@ -11,6 +11,26 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.app {
+	display: grid;
+	height: 100vh;
+	grid-template-columns: auto 1fr;
+	column-gap: 3em;
+}
+
+.sidebar {
+	width: 300px;
+	flex-shrink: 0;
+	box-sizing: border-box;
+}
+
+.content {
+	flex: 1;
+	padding: 1rem;
+	overflow-y: auto;
+	margin-bottom: 3em;
+}
+
 .List {
 	list-style: none;
 	display: grid;
@@ -26,7 +46,7 @@
 	text-align: center;
 	align-content: center;
 	color: white;
-	text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 1px 1px 2px rgba(0, 0, 0, 0.9);
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
 	cursor: pointer;
 
@@ -34,7 +54,7 @@
 	transform: scale(1);
 	border-radius: 8px;
 	font-size: 1rem;
-	font-weight: 600;
+	font-weight: 700;
 }
 
 .List__item:hover {
@@ -121,33 +141,35 @@
 
 .Selected-items {
 	width: 100%;
+	height: 100vh;
 	display: block;
 	padding: 1rem;
 	background-color: slategrey;
-	margin-bottom: 1rem;
-	box-shadow: 0 1px 10px #000000c5;
+	box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .Selected-items__title {
 	font-weight: 600;
 	font-size: 1.2rem;
-	margin: 0 0 0.2rem 0;
+	margin: 0 0 1rem 0;
 }
 
 .Selected-items__list {
 	display: flex;
-	flex-wrap: wrap;
+	flex-direction: column;
 	gap: 0.5rem;
-	height: auto;
-	max-height: 120px;
-	overflow-y: scroll;
+	height: calc(100vh - 80px);
+	overflow-y: auto;
 }
 
 .Selected-items__badge {
 	background-color: darkslategrey;
-	padding: 0.25rem 0.5rem;
+	padding: 0.5rem;
 	border-radius: 4px;
 	font-size: 0.9rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .Selected-items__remove {

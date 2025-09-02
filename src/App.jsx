@@ -22,15 +22,19 @@ function App() {
 
 	return (
 		<div className='app'>
-			<SelectedItems
-				selectedItems={Array.from(selectedItems)}
-				onRemove={handleToggleItem}
-			/>
-			<List
-				items={items}
-				selectedItems={selectedItems}
-				onToggleItem={handleToggleItem}
-			/>
+			<div className='sidebar'>
+				<SelectedItems
+					selectedItems={Array.from(selectedItems)}
+					onRemove={handleToggleItem}
+				/>
+			</div>
+			<div className='content'>
+				<List
+					items={items}
+					selectedItems={selectedItems}
+					onToggleItem={handleToggleItem}
+				/>
+			</div>
 		</div>
 	);
 }
